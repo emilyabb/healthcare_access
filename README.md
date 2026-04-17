@@ -60,11 +60,15 @@ healthcare_access/
 1. Download repository as ZIP
 2. Import notebooks into Workspace via **Import** button
 
-### 2. Create Unity Catalog Schemas
+### 2. Create Unity Catalogs and Schemas
 
 Run this SQL in a Databricks SQL notebook or query editor:
 
 ```sql
+CREATE CATALOG bronze_dev;
+CREATE CATALOG silver_dev;
+CREATE CATALOG gold_dev;
+
 -- Bronze layer (raw data)
 CREATE SCHEMA IF NOT EXISTS bronze_dev.census_bureau;
 CREATE SCHEMA IF NOT EXISTS bronze_dev.cms;
